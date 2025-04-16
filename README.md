@@ -1,4 +1,4 @@
 ## Architecture Diagram
 
-![Animated SVG](diagram.svg)
+![Animated SVG](AIAssesment.drawio.svg)
 
