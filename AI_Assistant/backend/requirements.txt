@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-multipart
+langchain
+chromadb
+sentence-transformers
+openpyxl
+python-dotenv
+pydantic
+langchain-community
+pypdf
+azure-storage-blob
+langchain-huggingface
+huggingface_hub[hf_xet]
