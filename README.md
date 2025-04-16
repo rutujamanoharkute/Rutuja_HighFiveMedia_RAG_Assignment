@@ -2,4 +2,4 @@
 
 ## Architecture Diagram
 
-[📊 View Interactive Diagram](https://your-hosted-link.com/AIAssesment.drawio.html)
+[📊 View Interactive Diagram](https://your-hosted-link.com/AIAssesment.drawio.html(1))
