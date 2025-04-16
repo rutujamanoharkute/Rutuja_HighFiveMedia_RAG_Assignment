@@ -1,4 +1,4 @@
 ## Architecture Diagram
 
-![Architecture Animation](diagram.gif)
+![Architecture Animation](AIAssesment.drawio.gif)
 
