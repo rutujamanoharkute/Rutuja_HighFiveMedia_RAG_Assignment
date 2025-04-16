@@ -89,6 +89,18 @@ CHROMADB_CONTAINER=chromadb
 ```
 
 ---
+## 🧩 Deployment Architecture
+
+This high-level diagram explains how Azure Container Apps are orchestrated:
+
+![Deployment Architecture](Deployment.drawio.svg)
+
+- Each service runs in its own container
+- Env vars injected at deployment
+- Ollama is the LLM inference layer
+- Frontend communicates via backend APIs
+
+---
 
 ## 🚀 Azure Deployment Commands
 
@@ -192,18 +204,6 @@ az containerapp update --name ollama-service --resource-group ai-assistant-rg --
 
 ---
 
-## 🧩 Deployment Architecture
-
-This high-level diagram explains how Azure Container Apps are orchestrated:
-
-![Deployment Architecture](Deployment.drawio.svg)
-
-- Each service runs in its own container
-- Env vars injected at deployment
-- Ollama is the LLM inference layer
-- Frontend communicates via backend APIs
-
----
 
 ## 🧑‍💻 Author
 **Rutuja Kute** – AI and Data Engineer
