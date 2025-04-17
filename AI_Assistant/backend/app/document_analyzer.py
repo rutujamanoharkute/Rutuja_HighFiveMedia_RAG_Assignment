@@ -16,6 +16,9 @@ import io
 import asyncio
 from typing import List, Dict
 import time
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Batch processing configuration
 BATCH_SIZE = 4  # Number of documents to process in each batch
