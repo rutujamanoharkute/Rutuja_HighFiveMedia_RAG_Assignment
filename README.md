@@ -1,20 +1,24 @@
 # 🧠 AI Assistant: Private Document Analysis Platform
 
-This project is a full-stack AI assistant designed for **secure internal document analysis**. It uses **local LLMs** via Ollama and integrates with **Azure Blob Storage** and **ChromaDB** for a privacy-focused AI workflow.
+This project is a full-stack AI assistant built for **privacy-first, internal document analysis**. Instead of relying on third-party APIs like OpenAI GPT, it leverages a **self-hosted Phi language model served through Ollama** inside an **Azure Container App** for complete control, cost-efficiency, and compliance.
+
+By containerizing the LLM using **Ollama**, we ensure your documents never leave your network, allowing for **secure inference, auditing, guardrails, and fallback handling**—crucial for enterprise, regulated, or confidential workflows.
 
 ---
 
 ## 🧾 Key Features
 
-- 🔐 **Private AI Assistant** using local Ollama-hosted Phi model for secure, offline LLM inference
-- 📄 **upload, query, and analyze documents** using RESTful API endpoints powered by FastAPI
-- 📦 **Containerized deployment** with Azure Container Apps for scalable, production-ready microservices
-- 💾 **Document embedding and retrieval** using ChromaDB for fast and accurate semantic search (RAG)
-- ☁️ **Azure Blob Storage integration** for persistent document and vector store backups
-- 🔍 **LangChain integration with guardrails** to ensure controlled and safe LLM responses
-- 📊 **Frontend interface** built with Streamlit for easy document upload and query visualization
-- 🔁 **Chunking, embedding, and metadata enrichment** for structured and contextualized document analysis
-- 🧠 **RAG + LLM powered pipeline** for contextual answers, summarization, and classification of documents
+- 🔐 **Private LLM Inference** using **internally hosted Ollama** serving the lightweight **Phi model** – ideal for secure, offline, and low-latency inference.
+- 📄 Upload, query, and analyze documents via **FastAPI RESTful endpoints**
+- 📦 **Microservices architecture**, deployed using **Azure Container Apps** for scalable production readiness
+- 💾 Document **embedding & retrieval** via **ChromaDB**, enabling fast and relevant RAG-based search
+- ☁️ **Azure Blob Storage integration** to persist original documents and vector index backups
+- 🔍 **LangChain Guardrails** to enforce safety, policy-aligned prompts, and restrict model behavior
+- 🛡️ **Fallback response system** for incomplete or low-confidence LLM outputs
+- 📊 **Streamlit frontend** for document upload and natural language querying
+- 🔁 Document **chunking, embedding, metadata enrichment** for structured analysis
+- 🧠 **RAG + Phi LLM pipeline** supports contextual Q&A, summarization, and document classification
+- 📋 **Auditing and logging** of all LLM queries and responses to ensure traceability and accountability
 
 ---
 
@@ -33,9 +37,10 @@ This project is a full-stack AI assistant designed for **secure internal documen
 
 This system consists of three main services:
 
-- **Frontend (Streamlit)**: Document upload, query interface
-- **Backend (FastAPI)**: Handles API, document processing, embedding, querying
-- **Ollama service**: Hosts the Phi model for inference (runs locally)
+- **Frontend (Streamlit)**: User interface for uploads and querying
+- **Backend (FastAPI)**: Orchestrates chunking, embedding, querying, summarizing
+- **Ollama Service**: Hosts the Phi language model for internal inference
+
 
 ![AI Assessment Architecture](AIAssesment.drawio.svg)
 
