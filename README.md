@@ -73,6 +73,20 @@ This system consists of three main services:
 ├── AIAssesment.drawio.svg
 ├── Deployment.drawio.svg
 └── README.md
+
+.
+├── fine-tune.py
+├── modelapp.py
+└── phi-lora-adapter-only
+    ├── README.md
+    ├── adapter_config.json
+    ├── adapter_model.safetensors
+    ├── added_tokens.json
+    ├── merges.txt
+    ├── special_tokens_map.json
+    ├── tokenizer.json
+    ├── tokenizer_config.json
+    └── vocab.json
 ```
 
 ---
