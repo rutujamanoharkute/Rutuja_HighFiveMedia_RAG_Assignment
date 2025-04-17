@@ -53,6 +53,7 @@ def get_ollama_llm():
             return llm
 
         except Exception as e:
+            logger.error(f"[ERROR] Failed to connect to fallback Ollama model: {e}")
             print(f"[ERROR] Failed to connect to fallback Ollama model: {e}")
             raise RuntimeError("Both primary and fallback Ollama models are unreachable.")
 
@@ -90,7 +91,9 @@ def download_from_blob(blob_name: str) -> str:
             temp_file.write(download_stream.readall())
             return temp_file.name
     except Exception as e:
+        logger.error(f"Failed to download blob {blob_name}: {str(e)}")
         raise RuntimeError(f"Failed to download blob {blob_name}: {str(e)}")
+        
 
 def backup_chromadb_to_blob():
     """Backup ChromaDB to blob storage"""
@@ -129,6 +132,7 @@ def load_and_split_documents(blob_names: List[str]):
             
             os.unlink(temp_path)
         except Exception as e:
+            logger.error(f"Error processing {blob_name}: {str(e)}")
             print(f"Error processing {blob_name}: {str(e)}")
             continue
     
