@@ -8,17 +8,21 @@ By containerizing the LLM using **Ollama**, we ensure your documents never leave
 
 ## 🧾 Key Features
 
-- 🔐 **Private LLM Inference** using **internally hosted Ollama** serving the lightweight **Phi model** – ideal for secure, offline, and low-latency inference.
-- 📄 Upload, query, and analyze documents via **FastAPI RESTful endpoints**
-- 📦 **Microservices architecture**, deployed using **Azure Container Apps** for scalable production readiness
-- 💾 Document **embedding & retrieval** via **ChromaDB**, enabling fast and relevant RAG-based search
-- ☁️ **Azure Blob Storage integration** to persist original documents and vector index backups
-- 🔍 **LangChain Guardrails** to enforce safety, policy-aligned prompts, and restrict model behavior
-- 🛡️ **Fallback response system** for incomplete or low-confidence LLM outputs
-- 📊 **Streamlit frontend** for document upload and natural language querying
-- 🔁 Document **chunking, embedding, metadata enrichment** for structured analysis
-- 🧠 **RAG + Phi LLM pipeline** supports contextual Q&A, summarization, and document classification
-- 📋 **Auditing and logging** of all LLM queries and responses to ensure traceability and accountability
+🔐 Private LLM Inference using internally hosted Ollama serving the lightweight Phi model – ideal for secure, offline, and low-latency inference
+
+📄 Upload, query, and analyze documents via FastAPI RESTful endpoints
+
+📦 Microservices architecture, deployed using Azure Container Apps for scalable production readiness
+
+💾 Document embedding & retrieval via ChromaDB, enabling fast and relevant RAG-based search
+
+☁️ Azure Blob Storage integration to persist original documents and vector index backups
+
+🔍 LangChain-powered RAG pipeline for contextual Q&A, summarization, and document classification
+
+🛡️ Guardrails AI integration to handle fallback responses if the LLM is unreachable and to block malicious or non-compliant queries
+
+📊 Streamlit frontend for document upload ,querying, analyzing
 
 ---
 
