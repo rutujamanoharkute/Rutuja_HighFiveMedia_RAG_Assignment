@@ -38,10 +38,12 @@ def get_ollama_llm():
         )
         llm.invoke("ping")
         print("[SUCCESS] Connected to primary Ollama model.")
+        logger.info("[SUCCESS] Connected to primary Ollama model.")
         return llm
 
     except Exception as e:
         print(f"[WARN] Failed to connect to primary Ollama model: {e}")
+        logger.info(f"[WARN] Failed to connect to primary Ollama model: {e}")
         try:
             OLLAMA_HOST = os.getenv('OLLAMA_HOST_LOCAL')
             MODEL_NAME = os.getenv('OLLAMA_MODEL')
@@ -57,6 +59,7 @@ def get_ollama_llm():
 
         except Exception as e:
             print(f"[ERROR] Failed to connect to fallback Ollama model: {e}")
+            logger.error(f"[ERROR] Failed to connect to fallback Ollama model: {e}")
             raise RuntimeError("Both primary and fallback Ollama models are unreachable.")
 
 # Initialize LLM
@@ -137,6 +140,7 @@ class DocumentBatchProcessor:
             
         except Exception as e:
             print(f"[ERROR] Batch processing failed: {e}")
+            logger.error(f"[ERROR] Batch processing failed: {e}")
             raise
         finally:
             self.current_batch = []
@@ -163,7 +167,9 @@ def download_from_blob(blob_name: str) -> str:
             return temp_file.name
     except Exception as e:
         print(f"[ERROR] Failed to download blob {blob_name}: {str(e)}")
+        logger.error(f"[ERROR] Failed to download blob {blob_name}: {str(e)}")
         raise RuntimeError(f"Failed to download blob {blob_name}: {str(e)}")
+        
 
 def parse_date(date_str):
     """Parse date string from various formats"""
@@ -186,6 +192,7 @@ def parse_date(date_str):
         except ValueError:
             continue
     print(f"[WARN] Unable to parse date: {date_str}")
+    logger.info(f"[WARN] Unable to parse date: {date_str}")
     # If date parsing fails, return None
     return None
 
@@ -287,6 +294,7 @@ def analyze_documents_from_blob(container_client, organizational_values):
             
         except Exception as e:
             print(f"[ERROR] Error processing {blob.name}: {str(e)}")
+            logger.error(f"[ERROR] Error processing {blob.name}: {str(e)}")
             continue
     
     # Process any remaining documents in the batch
