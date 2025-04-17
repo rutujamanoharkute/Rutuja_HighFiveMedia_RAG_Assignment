@@ -231,6 +231,25 @@ az containerapp update --name ollama-service --resource-group ai-assistant-rg --
 
 ---
 
+### 🚧 Possible Improvements (Given More Time & Resources)
+
+1. **🔧 GPU-Accelerated Inference**  
+   Use GPU-based private models via Azure OpenAI or NC-series Azure VMs to significantly reduce inference latency.  
+   - On CPU (containerized without fine-tuning): ~1–2 minutes per response  
+   - On CPU (locally fine-tuned model): over 10 minutes per response  
+   This makes CPU-based deployment impractical for production workloads.
+
+2. **🧠 Efficient Fine-Tuning**  
+   Attempted to fine-tune and serve a lightweight Phi LoRA model locally, but had to skip containerization due to extremely slow inference. With proper GPU resources, this could be containerized and scaled effectively.
+
+3. **🚀 CI/CD Pipeline Integration**  
+   Add GitHub Actions or Azure DevOps workflows to automate build, test, and deploy processes across all services (backend, frontend, model inference).
+
+
+4. **🧪 Async & Background Processing**  
+   Shift heavier tasks like summarization or full-document analysis to background jobs (e.g., FastAPI background tasks or Celery) to improve API responsiveness.
+---
+
 
 ## 🧑‍💻 Author
 **Rutuja Kute** – AI and Data Engineer
