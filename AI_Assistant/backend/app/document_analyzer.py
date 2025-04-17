@@ -139,9 +139,7 @@ class DocumentBatchProcessor:
             self.current_batch = []
             self.last_batch_time = time.time()
 
-# Rest of your existing functions remain unchanged until analyze_documents_from_blob
-# [Keep all the existing functions: download_from_blob, parse_date, 
-#  calculate_content_hash, extract_structured_data exactly as they are]
+
 
 blob_service_client = BlobServiceClient(
     account_url=f"https://{os.getenv('AZURE_STORAGE_ACCOUNT_NAME')}.blob.core.windows.net",
