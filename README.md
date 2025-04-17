@@ -74,7 +74,7 @@ This system consists of three main services:
 ├── Deployment.drawio.svg
 └── README.md
 
-.
+fine-tune-locally
 ├── fine-tune.py
 ├── modelapp.py
 └── phi-lora-adapter-only
