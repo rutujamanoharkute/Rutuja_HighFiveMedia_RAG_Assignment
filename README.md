@@ -1,3 +1,5 @@
+# Video Link
+### https://youtu.be/ksPQSbe-FD0
 # 🧠 AI Assistant: Private Document Analysis Platform
 
 This project is a full-stack AI assistant built for **privacy-first, internal document analysis**. Instead of relying on third-party APIs like OpenAI GPT, it leverages a **self-hosted Phi language model served through Ollama** inside an **Azure Container App** for complete control, cost-efficiency, and compliance.
